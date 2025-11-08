@@ -222,31 +222,44 @@ body {
 }
 
 .footer-container {
-    display: flex;
+    background-color: #000;
+    padding: 4em 1em;
+}
+
+.footer-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.footer-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.footer-item h3 {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    display: grid;
+    gap: 20px;
+}
+
+.footer-links a {
     align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 6rem 2rem;
-    background-color: black;
-    flex-wrap: wrap;
-    text-align: center;
-}
-
-.footer-info {
-    max-width: 400px;
-    align-items: flex-start;
+    color: #fff;
     display: flex;
-    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
 }
 
-.footer-info p,
-.footer-info a {
-    display: block;
-    margin: 8px 0;
-    color: white;
-    font-size: 18px;
-    text-decoration: none;
-    text-align: left;
+.map iframe {
+    border: 0;
+    height: 300px;
+    width: 100%;
 }
 
 .avaliacoes {
@@ -335,7 +348,7 @@ body {
 
 .faq-eyebrow {
     display: inline-block;
-    font-size: .8rem;
+    font-size: 1.3rem;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: white;
@@ -388,7 +401,6 @@ summary.faq-summary::-webkit-details-marker {
     height: 8px;
     border-radius: 50%;
     background: #22d3ee;
-    margin-right: 0.5rem;
 }
 
 .faq-summary .caret {
@@ -449,13 +461,12 @@ details[open] .faq-summary .caret {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .header-container {
-        padding: 2em 0.5em;
+        padding: 4em 1em;
         display: flex;
         flex-direction: column;
         background-image: url("/assets/altamir-mobile.jpg");
-        width: 100%;
         justify-content: center;
         align-items: center;
         background-size: cover;
@@ -469,6 +480,7 @@ details[open] .faq-summary .caret {
     .header-title h3 {
         font-size: 1.2em;
         padding: 0;
+        text-align: center;
     }
 
     .header-title p {
@@ -532,18 +544,26 @@ details[open] .faq-summary .caret {
         font-size: 0.95em;
     }
 
-    .footer-container {
-        gap: 16px;
-        padding: 2em 0.5em 4rem;
+    .footer-item h3 {
+        text-align: center;
     }
 
-    .logo {
-        width: 300px;
+    .footer-items {
+        grid-template-columns: 1fr;
     }
 
     .footer-info p,
     .footer-info a {
         font-size: 15px;
+        text-align: left;
+    }
+
+    .map iframe {
+        margin-top: 2rem;
+    }
+
+    .logo {
+        width: 300px;
     }
 
     .avaliacoes .wrapper .conteudo {
